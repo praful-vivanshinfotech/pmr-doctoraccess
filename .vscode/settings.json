@@ -1,0 +1,21 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.sortMembers": true
+  },
+  "files.exclude": {
+    "node_modules/": true,
+    ".next/": true
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.associations": {
+    "**/components/**/*.js": "javascriptreact",
+    "**/pages/**/*.js": "javascriptreact"
+  },
+  "cSpell.words": ["swiper"],
+  "emmet.includeLanguages": { "javascript": "javascriptreact" },
+  "editor.quickSuggestions": {
+    "strings": true
+  }
+}
