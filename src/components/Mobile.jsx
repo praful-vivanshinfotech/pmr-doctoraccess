@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Link } from "@mui/material";
-import theme from "@/theme";
 
 const Mobile = () => {
   return (
@@ -25,7 +24,7 @@ const Mobile = () => {
         </Box>
         <Box
           sx={{
-            color: theme.palette.gray900,
+            color: "gray900",
             fontWeight: 500,
             fontSize: 32,
             my: 3,
@@ -35,7 +34,7 @@ const Mobile = () => {
         </Box>
         <Box
           sx={{
-            color: theme.palette.gray900,
+            color: "gray900",
             fontWeight: 400,
             fontSize: 18,
             my: 3,
@@ -47,7 +46,7 @@ const Mobile = () => {
       </Box>
       <Box
         sx={{
-          color: theme.palette.gray300,
+          color: "gray300",
           fontWeight: 400,
           fontSize: 18,
           mt: 15,
