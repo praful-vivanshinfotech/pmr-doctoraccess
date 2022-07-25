@@ -9,6 +9,7 @@ const theme = createTheme({
     },
     gray100: "#F6F8FA",
     gray200: "#EBEBEB",
+    gray300: "#868490",
     gray900: "#031C3A",
   },
   typography: {
