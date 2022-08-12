@@ -1,13 +1,11 @@
-import React, { lazy, useEffect, useState } from "react";
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import React, { useEffect, useState } from "react";
+import { ThemeProvider } from "@mui/material";
+import theme from "@/theme";
+import Pages from "@/pages";
 import Mobile from "./components/Mobile";
-const LoginComp = lazy(() => import("@/pages/Login"));
 
 const App = () => {
   const [isDesktop, setDesktop] = useState(window.innerWidth > 1024);
-
   const updateWidth = () => setDesktop(window.innerWidth > 1024);
 
   useEffect(() => {
@@ -15,18 +13,9 @@ const App = () => {
     return () => window.removeEventListener("resize", updateWidth);
   });
   return (
-    <>
-      {isDesktop ? (
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<LoginComp />}></Route>
-            <Route path="/about" element={<>About us page</>}></Route>
-          </Routes>
-        </BrowserRouter>
-      ) : (
-        <Mobile />
-      )}
-    </>
+    <ThemeProvider theme={theme}>
+      {isDesktop ? <Pages /> : <Mobile />}
+    </ThemeProvider>
   );
 };
 

@@ -2,6 +2,7 @@ import { createTheme } from "@mui/material";
 const theme = createTheme({
   palette: {
     primary: {
+      dark: "#2093A5",
       main: "#2AB3C8",
     },
     error: {
@@ -15,6 +16,9 @@ const theme = createTheme({
   typography: {
     h1: {
       fontSize: "40px",
+    },
+    h2: {
+      fontSize: "32px",
     },
   },
 });

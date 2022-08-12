@@ -24,7 +24,6 @@ const Mobile = () => {
         </Box>
         <Box
           sx={{
-            color: "gray900",
             fontWeight: 500,
             fontSize: 32,
             my: 3,
@@ -34,7 +33,6 @@ const Mobile = () => {
         </Box>
         <Box
           sx={{
-            color: "gray900",
             fontWeight: 400,
             fontSize: 18,
             my: 3,

@@ -1,23 +1,28 @@
-import Layout from "@/components/Auth/Layout";
+import AuthLayout from "@/components/Layout/AuthLayout";
 import { CstButton, CstInput, RouterLink } from "@/components/Form";
 import { Box, Typography } from "@mui/material";
-import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const schema = yup.object({
-    email: yup.string().email().required(),
-    password: yup.string().required(),
+    email: yup
+      .string()
+      .email("Entered email is not valid")
+      .required("Please enter valid email address"),
+    password: yup.string().required("Please enter your password"),
   });
   const logInForm = useForm({ resolver: yupResolver(schema) });
-  console.log(logInForm.formState.errors);
+
+  const navigate = useNavigate();
   const submitLogin = (value) => {
     console.log(value);
+    navigate("/tfa", { replace: true });
   };
   return (
-    <Layout>
+    <AuthLayout>
       <form onSubmit={logInForm.handleSubmit(submitLogin)}>
         <Typography
           variant="h1"
@@ -35,11 +40,16 @@ const Login = () => {
           name="email"
           form={logInForm}
         ></CstInput>
-        <CstInput label="Password" name="password" form={logInForm}></CstInput>
+        <CstInput
+          label="Password"
+          type="password"
+          name="password"
+          form={logInForm}
+        ></CstInput>
         <RouterLink
           to="/forgot-password"
           sx={{
-            color: "primary.main",
+            color: "primary.dark",
             fontSize: 14,
             textDecoration: "none",
             "&:hover": {
@@ -47,7 +57,7 @@ const Login = () => {
             },
           }}
         >
-          Forgot Password
+          Forgot your password?
         </RouterLink>
         <Box mt={2}>
           <CstButton
@@ -57,11 +67,11 @@ const Login = () => {
             fullWidth
             size="large"
           >
-            Submit
+            Sign in
           </CstButton>
         </Box>
       </form>
-    </Layout>
+    </AuthLayout>
   );
 };
 

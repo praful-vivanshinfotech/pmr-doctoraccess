@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
-const Layout = ({ children }) => {
+const AuthLayout = ({ children }) => {
   return (
     <Box
       sx={{
@@ -40,4 +40,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default AuthLayout;
